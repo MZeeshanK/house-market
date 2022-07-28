@@ -61,7 +61,8 @@ function EditListing() {
       toast.error('You cannot edit that listing');
       navigate('/');
     }
-  }, []);
+    // eslint-disable-next-line
+  }, [auth.currentUser.uid, listing, navigate]);
 
   useEffect(() => {
     setLoading(true);
@@ -96,7 +97,8 @@ function EditListing() {
     return () => {
       isMounted.current = false;
     };
-  }, [isMounted]);
+    // eslint-disable-next-line
+  }, [auth, formData, navigate]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
