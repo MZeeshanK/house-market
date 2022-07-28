@@ -61,7 +61,7 @@ function EditListing() {
       toast.error('You cannot edit that listing');
       navigate('/');
     }
-  }, [listing]);
+  }, []);
 
   useEffect(() => {
     setLoading(true);
