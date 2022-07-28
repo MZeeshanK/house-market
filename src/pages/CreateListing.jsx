@@ -66,7 +66,8 @@ function CreateListing() {
     return () => {
       isMounted.current = false;
     };
-  }, [auth, formData, navigate]);
+    // eslint-disable-next-line
+  }, [isMounted]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -435,7 +436,7 @@ function CreateListing() {
             id="images"
             onChange={onMutate}
             max="6"
-            accept=".jpg,.png,.jpeg"
+            accept=".jpg,.png,.jpeg,.avif"
             multiple
             required
           />

@@ -62,7 +62,7 @@ function EditListing() {
       navigate('/');
     }
     // eslint-disable-next-line
-  }, [auth.currentUser.uid, listing, navigate]);
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -98,7 +98,7 @@ function EditListing() {
       isMounted.current = false;
     };
     // eslint-disable-next-line
-  }, [auth, formData, navigate]);
+  }, [isMounted]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -468,7 +468,7 @@ function EditListing() {
             id="images"
             onChange={onMutate}
             max="6"
-            accept=".jpg,.png,.jpeg"
+            accept=".jpg,.png,.jpeg,.avif"
             multiple
             required
           />
