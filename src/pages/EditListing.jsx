@@ -61,7 +61,7 @@ function EditListing() {
       toast.error('You cannot edit that listing');
       navigate('/');
     }
-  }, []);
+  }, [auth.currentUser.uid, listing, navigate]);
 
   useEffect(() => {
     setLoading(true);
@@ -96,7 +96,7 @@ function EditListing() {
     return () => {
       isMounted.current = false;
     };
-  }, [isMounted]);
+  }, [isMounted, navigate, formData, auth]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
